@@ -1,0 +1,52 @@
+[
+    {
+        "model": "goaldenapi.goal",
+        "pk": 1,
+        "fields": {
+            "title": "AM/PM stroll",
+            "description":"Walk 30 minutes daily ",
+            "type":"1",
+            "created_by":"1"
+        }
+    },
+    {
+        "model": "goaldenapi.goal",
+        "pk": 2,
+        "fields":{
+            "title": "Meditate",
+            "description":"Meditate 10 minutes daily",
+            "type":"2",
+            "created_by":"1"
+        }
+    },
+    {
+        "model": "goaldenapi.goal",
+        "pk": 3,
+        "fields":{
+            "title": "Book",
+            "description":"Read a book 15 minutes daily ",
+            "type":"3",
+            "created_by":"1"
+        }
+    },
+    {
+        "model": "goaldenapi.goal",
+        "pk": 4,
+        "fields":{
+            "title": "Cleanup",
+            "description":"Clean kitchen after cooking",
+            "type":"4",
+            "created_by":"1"
+        }
+    },
+    {
+        "model": "goaldenapi.goal",
+        "pk": 5,
+        "fields":{
+            "title": "Tank Fillup",
+            "description":"Fill Up Gas Tank Weekly",
+            "type":"5",
+            "created_by":"1"
+        }
+    }
+]

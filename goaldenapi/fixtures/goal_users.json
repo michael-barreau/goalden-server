@@ -1,0 +1,10 @@
+[
+    {
+        "model": "goaldenapi.goaluser",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "phone_number": "6159770226"
+        }
+    }
+]
