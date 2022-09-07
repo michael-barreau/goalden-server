@@ -5,8 +5,18 @@
         "fields": {
             "member" : 1,
             "goal" : 1,
-            "check_in_frequency" : 1,
+            "check_in_frequency" : "Daily",
             "is_complete" : true
+        }
+    },
+    {
+        "model": "goaldenapi.goaluser",
+        "pk": 2,
+        "fields": {
+            "member" : 2,
+            "goal" : 2,
+            "check_in_frequency" : "Weekly",
+            "is_complete" : false
         }
     }
 ]

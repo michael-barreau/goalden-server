@@ -19,10 +19,12 @@ from django.urls import include, path
 from rest_framework import routers
 from goaldenapi.views import GoalTypeView
 from goaldenapi.views import GoalView
+from goaldenapi.views import GoalBuddyView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'goaltypes', GoalTypeView, 'goaltype')
 router.register(r'goals', GoalView, 'goal')
+router.register(r'goalbuddies', GoalBuddyView, 'goalbuddy')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

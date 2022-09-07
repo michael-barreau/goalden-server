@@ -3,8 +3,16 @@
         "model": "goaldenapi.member",
         "pk": 1,
         "fields": {
-            "user": 1,
+            "member": 1,
             "phone_number": "6159770226"
+        }
+    },
+    {
+        "model": "goaldenapi.member",
+        "pk": 2,
+        "fields": {
+            "member": 2,
+            "phone_number": "6159770332"
         }
     }
 ]
