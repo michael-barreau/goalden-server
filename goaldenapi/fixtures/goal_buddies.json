@@ -1,0 +1,20 @@
+[
+    {
+        "model": "goaldenapi.goalbuddy",
+        "pk": 1,
+        "fields": {
+            "member" : 1,
+            "buddy" : 1,
+            "goal" : 1 
+        }
+    },
+    {
+        "model": "goaldenapi.goalbuddy",
+        "pk": 2,
+        "fields": {
+            "member" : 2,
+            "buddy" : 2,
+            "goal" : 2 
+        }
+    }
+]
