@@ -22,12 +22,12 @@ class GoalView(ViewSet):
         serializer = GoalSerializer(goals, many=True)
         return Response(serializer.data) 
 
-    def create(self, request, pk):
+    def create(self, request):
         new_goal = Goal.objects.create(
             title=request.data["title"],
             description=request.data["description"],
-            type= GoalType.objects.get(pk=request.data["type"])
-            # created_by= GoalUser.objects.get(user=request.auth.user)
+            type= GoalType.objects.get(pk=request.data["type"]),
+            created_by= GoalUser.objects.get(user=request.auth.user)
         )
         serializer = GoalSerializer(new_goal)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
