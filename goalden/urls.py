@@ -17,17 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from goaldenapi.views import GoalTypeView
-from goaldenapi.views import GoalView
-from goaldenapi.views import GoalBuddyView
+from goaldenapi.views.goal_type import GoalTypeView
+from goaldenapi.views.goal import GoalView
+from goaldenapi.views.goal_buddy import GoalBuddyView
+from goaldenapi.views.goal_user import GoalUserView
+from goaldenapi.views import register_user, login_user
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'goaltypes', GoalTypeView, 'goaltype')
 router.register(r'goals', GoalView, 'goal')
 router.register(r'goalbuddies', GoalBuddyView, 'goalbuddy')
+router.register(r'goalusers', GoalUserView, 'goaluser')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('register', register_user),
+    path('login', login_user),
 ]
 
