@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "member" : 1,
-            "buddy" : 1,
+            "buddy" : 2,
             "goal" : 1 
         }
     },
@@ -13,8 +13,8 @@
         "pk": 2,
         "fields": {
             "member" : 2,
-            "buddy" : 2,
-            "goal" : 2 
+            "buddy" : 1,
+            "goal" : 3 
         }
     }
 ]

@@ -22,6 +22,9 @@ class GoalView(ViewSet):
         member_id = self.request.query_params.get('member_id', None)
         if member_id is not None:
             goals = goals.filter(created_by_id=member_id)
+        else: 
+            member = Member.objects.get(member=request.auth.user)
+            goals = goals.exclude(created_by=member)
         serializer = GoalSerializer(goals, many=True)
         return Response(serializer.data) 
 

@@ -16,15 +16,16 @@ class GoalBuddyView(ViewSet):
             return Response({}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
-        goal_buddy = GoalBuddy.objects.all()
-        serializer = GoalBuddySerializer(goal_buddy, many=True)
+        logged_in_member = Member.objects.get(member=request.auth.user)
+        goal_buddies = GoalBuddy.objects.filter(buddy=logged_in_member)
+        serializer = GoalBuddySerializer(goal_buddies, many=True)
         return Response(serializer.data) 
     
     def create(self, request):
         goal_buddy = GoalBuddy.objects.create(
-            member = Member.objects.get(member=request.auth.user),
+            member = Member.objects.get(pk=request.data["member"]),
             goal = Goal.objects.get(pk=request.data["goal"]),
-            buddy = Member.objects.get(pk=request.data["buddy"])
+            buddy = Member.objects.get(member=request.auth.user)
              )
         serializer = GoalBuddySerializer(goal_buddy)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -44,7 +45,7 @@ class GoalBuddySerializer(serializers.ModelSerializer):
     class Meta:
         model = GoalBuddy
         fields = ('id', 'member', 'buddy', 'goal')
-        depth = 1
+        depth = 2
 
 class CreateGoalBuddySerializer(serializers.ModelSerializer):
     class Meta:
